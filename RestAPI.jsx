@@ -1,19 +1,27 @@
-import { StyleSheet, Text, View } from "react-native";
+import {StyleSheet, Text, View} from 'react-native';
 import React, {useState, useEffect} from 'react';
-import axios from 'react'; 
+import axios from 'axios';
 
 const RestAPI = () => {
-    const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/users')
+      .then(res => setUsers(res.data));
+  }, []);
 
-    useEffect(() => {
-        axios 
-            .get('https://jsonplaceholder.typicode.com/users')
-            .then(res => setUsers(res.data));
-    }, []);
-    return (
-        <View>
-            <Text>RestAPI</Text>
-            {users.map(item => ())}
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>RestAPI</Text>
+      {users.map(item => {
+        return (
+          <Text key={item.id} style={{fontSize: 20}}>
+            {item.name}
+          </Text>
+        );
+      })}
+    </View>
+  );
+};
+
+export default RestAPI;

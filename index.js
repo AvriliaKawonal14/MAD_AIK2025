@@ -10,6 +10,7 @@ import Flexbox from './Flexbox';
 import exercise4 from './exercise4';
 import Signin from './Signin';
 import Exercise6 from './Exercise6';
+import RestAPI from './RestAPI';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Exercise6);
+AppRegistry.registerComponent(appName, () => RestAPI);
