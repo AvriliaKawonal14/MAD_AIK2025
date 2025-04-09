@@ -11,6 +11,7 @@ import exercise4 from './exercise4';
 import Signin from './Signin';
 import Exercise6 from './Exercise6';
 import RestAPI from './RestAPI';
+import UserItem from './UserItem';
 import {name as appName} from './app.json';
 
 AppRegistry.registerComponent(appName, () => RestAPI);
